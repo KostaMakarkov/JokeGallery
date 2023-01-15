@@ -1,0 +1,32 @@
+<div class="login-page-wrapper">
+  <div class="login-wrapper">
+    <h1>LOGIN</h1>
+    <div class="login-form-wrapper">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="input-wrapper">
+          <input
+            type="email"
+            id="emailInput"
+            class="form-control"
+            formControlName="email"
+            placeholder="Email"
+          />
+        </div>
+
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="passwordInput"
+            class="form-control"
+            formControlName="password"
+            placeholder="Password"
+          />
+        </div>
+        <button class="submit-btn">{{ this.loginEnums.SIGN_IN }}</button>
+        <span class="from-error" *ngIf="form.submitted || wrongCredentials">{{
+          loginErrors.WRONG_EMAIL_OR_PASSWORD
+        }}</span>
+      </form>
+    </div>
+  </div>
+</div>

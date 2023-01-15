@@ -1,0 +1,48 @@
+
+
+
+.grid-wrapper{
+    padding: 25px;
+}
+.button-wrapper{
+    padding: 0px 25px;
+    display: flex;
+    justify-content: end;
+    button{
+        border: 0px;
+        background-color: burlywood;
+        height: 30px;
+        padding: 3px 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+.twoPart-joke{
+    cursor: pointer;
+    p{
+        line-height: 30px;
+        font-size: 25px;
+        width: 80%;
+        margin: auto;
+        word-break: break-word;
+        text-align:  center;
+        &.setup{
+            margin-bottom: 15px;
+        }
+        &.punchLine{
+            font-weight: 800;
+        }
+    }
+}
+.single-joke{
+    cursor: pointer;
+    p{
+        line-height: 30px;
+        width: 80%;
+        margin: auto;
+        font-size: 25px;
+        word-break: break-word;
+        text-align:  center;
+    }
+}

@@ -1,0 +1,34 @@
+<div class="button-wrapper">
+  <button class="logout" (click)="logOut()">Log Out</button>
+</div>
+<div class="grid-wrapper">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let jk of jokesArray"
+      [colspan]="2"
+      [rowspan]="3"
+      style.background="{{ jk.background }}"
+      (click)="openDialog(jk)"
+    >
+      <ng-container *ngIf="jk.type === 'twopart'">
+        <div class="twoPart-joke" role="button">
+          <p class="setup" [ngStyle]="{ color: invertColor(jk.background) }">
+            {{ jk.setup }}
+          </p>
+          <br />
+          <p
+            class="punchLine"
+            [ngStyle]="{ color: invertColor(jk.background) }"
+          >
+            {{ jk.delivery }}
+          </p>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="jk.type === 'single'">
+        <div class="single-joke">
+          <p [ngStyle]="{ color: invertColor(jk.background) }">{{ jk.joke }}</p>
+        </div>
+      </ng-container>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

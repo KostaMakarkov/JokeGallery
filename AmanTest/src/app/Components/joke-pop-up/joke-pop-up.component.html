@@ -1,0 +1,58 @@
+<mat-card class="joke-card">
+  <div class="close">
+    <button (click)="closeDialog()"><mat-icon>close</mat-icon></button>
+  </div>
+  <mat-card-content>
+    <ng-container *ngIf="selectedJoke.type === 'twopart'">
+      <div class="twoPart-joke" role="button">
+        <p class="setup">{{ selectedJoke.setup }}</p>
+        <br />
+        <p class="punchLine">{{ selectedJoke.delivery }}</p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="selectedJoke.type === 'single'">
+      <div class="single-joke">
+        <p>{{ selectedJoke.joke }}</p>
+      </div>
+    </ng-container>
+    <hr />
+    <ng-container>
+      <div class="flags">
+        <div class="flag" *ngFor="let flag of jokeFlags; let i = index">
+          <div *ngIf="getFlagState(flag, i)">
+            <mat-icon>check_circle</mat-icon>
+          </div>
+          <div *ngIf="!getFlagState(flag, i)">
+            <mat-icon>highlight_off</mat-icon>
+          </div>
+          <span>{{ flag }}</span>
+        </div>
+      </div>
+    </ng-container>
+    <hr />
+    <ng-container>
+      <div class="sub-title-wrapper">
+        <mat-card-title>Maybe you would like some of those</mat-card-title>
+      </div>
+      <div class="additionalJokes">
+        <div
+          class="joke"
+          *ngFor="let ajk of getRelatedJokes(selectedJoke) | slice : 0 : 4"
+        >
+          <ng-container *ngIf="selectedJoke.type === 'twopart'">
+            <div class="twoPart-joke" role="button">
+              <p class="setup">{{ ajk.setup }}</p>
+              <br />
+              <p class="punchLine">{{ ajk.delivery }}</p>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="selectedJoke.type === 'single'">
+            <div class="single-joke">
+              <p>{{ ajk.joke }}</p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

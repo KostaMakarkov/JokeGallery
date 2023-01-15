@@ -1,0 +1,107 @@
+.joke-card {
+  padding: 15px;
+}
+hr {
+  margin-top: 25px;
+}
+
+.close {
+  display: flex;
+  justify-content: end;
+  button {
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.flags {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  .flag {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 5px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.twoPart-joke {
+  cursor: pointer;
+  p {
+    line-height: 30px;
+    font-size: 25px;
+    width: 80%;
+    margin: auto;
+    word-break: break-word;
+    text-align: center;
+    &.setup {
+      margin-bottom: 15px;
+    }
+    &.punchLine {
+      font-weight: 800;
+    }
+  }
+}
+.single-joke {
+  cursor: pointer;
+  p {
+    line-height: 30px;
+    width: 80%;
+    margin: auto;
+    font-size: 25px;
+    word-break: break-word;
+    text-align: center;
+  }
+}
+
+.additionalJokes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  .joke {
+    width: 25%;
+  }
+  .twoPart-joke {
+    p {
+      line-height: 30px;
+      font-size: 25px;
+      width: 80%;
+      margin: auto;
+      word-break: break-word;
+      text-align: center;
+      cursor: default;
+      &.setup {
+        margin-bottom: 15px;
+        height: 185px;
+      }
+      &.punchLine {
+        font-weight: 800;
+        min-height: 120px;
+      }
+    }
+  }
+  .single-joke {
+    p {
+      line-height: 30px;
+      width: 80%;
+      margin: auto;
+      font-size: 25px;
+      word-break: break-word;
+      text-align: center;
+    }
+  }
+}
+
+.sub-title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
